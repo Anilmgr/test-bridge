@@ -1,0 +1,68 @@
+.bridge-box{
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 1rem;
+    #bridgeBox{
+        background: rgb(255,255,255,0.35);
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        .nav-item{
+            flex: 0 0 50%;
+            .nav-link{
+                width: 100%;
+            }
+        }
+    }
+
+    #bridgeBoxContent{
+        .bridge-form{
+            background-color: rgb(255, 255, 255);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+
+            h5{
+                font-size: 1rem;
+                font-weight: 700;
+            }
+
+            .from-block, .to-block{
+                border-radius: 0.8rem;
+                
+                input{
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                .eth-img{
+                    width: 1.5rem;
+                    height:auto;
+                }
+
+                .btn-max{
+                    font-weight: 600;
+                    background: none;
+                    color: #0d6efd;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .to-block{
+                background: rgb(235, 233, 233);
+            }
+
+            .balance-txt{
+                color: #777;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .label-b{
+        font-weight: 500;
+    }
+}

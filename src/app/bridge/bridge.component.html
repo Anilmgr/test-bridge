@@ -1,0 +1,100 @@
+<div class="py-4">
+    <div class="bridge-box col-md-5 mx-auto">
+        <ul class="nav nav-pills mb-3" id="bridgeBox" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="bridge-deposit-tab" data-bs-toggle="pill" data-bs-target="#bridge-deposit" type="button" role="tab" aria-controls="bridge-deposit" aria-selected="true">Deposit</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="bridge-withdraw-tab" data-bs-toggle="pill" data-bs-target="#bridge-withdraw" type="button" role="tab" aria-controls="bridge-withdraw" aria-selected="false">Withdraw</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="bridgeBoxContent">
+            <div class="tab-pane fade show active" id="bridge-deposit" role="tabpanel" aria-labelledby="bridge-deposit-tab">
+                <div class="bridge-form">
+                    <div class="from">
+                        <h5>From</h5>
+                        <div class="from-block border">
+                            <div class="row m-0 p-3">
+                               <div class="col-md-6"><img class="eth-img" src="assets/icons/ethereum.svg" alt="Ether"><span class="label-b">Ethereum chain</span></div>
+                               <div class="col-md-6 text-end"><span class="balance-txt">Balance:</span> 0 ETH</div>
+                            </div>
+                            <div class="row m-0 align-items-center border-top px-3">
+                                <div class="col-md-4 border-end py-2"> <img class=".eth-img me-1" src="assets/icons/eth.svg" alt="eth">Ether</div>
+                                <div class="col-md-8 py-1">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-0" placeholder="0.00">
+                                        <span class="input-group-text border-0 btn-max">MAX</span>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-down text-center pt-2">
+                        <img src="assets/icons/arrow-down.svg" alt="arrow">
+                    </div>
+                    <div class="to">
+                        <h5>To</h5>
+                        <div class="to-block border p-3">
+                            <div class="row m-0">
+                                <div class="col-md-6"><img class="eth-img me-1" src="assets/icons/polygon.svg" alt="Polygon"><span class="label-b">Polygon chain</span></div>
+                                <div class="col-md-6 text-end"><span class="balance-txt">Balance:</span> 0 ETH</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="py-4 text-center">
+                    <span class="text-muted">Transfer Mode:</span> PoS Bridge
+                </div>
+                <button *ngIf="!isConnected; else transfer1" class="w-100 btn btn-primary py-2" (click)="connectToMetaMask()">Connect Wallet</button>
+                <ng-template #transfer1>
+                    <button class="w-100 btn btn-primary py-2">Transfer</button>
+                </ng-template>
+            </div>
+            <div class="tab-pane fade" id="bridge-withdraw" role="tabpanel" aria-labelledby="bridge-withdraw-tab">
+                <div class="bridge-form">
+                    <div class="from">
+                        <h5>From</h5>
+                        <div class="from-block border">
+                            <div class="row m-0 p-3">
+                               <div class="col-md-6"><img class="eth-img me-1" src="assets/icons/polygon.svg" alt="Ether"><span class="label-b">Polygon chain</span></div>
+                               <div class="col-md-6 text-end"><span class="balance-txt">Balance:</span> 0 ETH</div>
+                            </div>
+                            <div class="row m-0 align-items-center border-top px-3">
+                                <div class="col-md-4 border-end py-2"> <img class=".eth-img me-1" src="assets/icons/eth.svg" alt="eth">Ether</div>
+                                <div class="col-md-8 py-1">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-0" placeholder="0.00">
+                                        <span class="input-group-text border-0 btn-max">MAX</span>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-down text-center pt-2">
+                        <img src="assets/icons/arrow-down.svg" alt="arrow">
+                    </div>
+                    <div class="to">
+                        <h5>To</h5>
+                        <div class="to-block border p-3">
+                            <div class="row m-0">
+                                <div class="col-md-6"><img class="eth-img" src="assets/icons/ethereum.svg" alt="Ethereum"><span class="label-b">Ethereum chain</span></div>
+                                <div class="col-md-6 text-end"><span class="balance-txt">Balance:</span> 0 ETH</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="py-4 text-center">
+                    <span class="text-muted">Transfer Mode:</span> PoS Bridge
+                </div>
+                
+                <button *ngIf="!isConnected; else transfer2" class="w-100 btn btn-primary py-2" (click)="connectToMetaMask()">Connect Wallet</button>
+                <ng-template #transfer2>
+                    <button class="w-100 btn btn-primary py-2">Transfer</button>
+                </ng-template>
+            </div>
+          </div>
+    </div>
+
+</div>
